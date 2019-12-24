@@ -1,15 +1,8 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 import getConfig from 'next/config';
 const { publicRuntimeConfig } = getConfig();
-import { register, unregister } from 'next-offline/runtime'
-
 
 class MyDocument extends Document {
-
-  componentDidMount () {
-    register()
-  }
-  
   setGoogleTags() {
     if (publicRuntimeConfig.PRODUCTION) {
       return {
