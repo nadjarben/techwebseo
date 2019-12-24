@@ -11,7 +11,7 @@ class MyDocument extends Document {
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
 
-          gtag('config', 'UA-147955896-1');
+          gtag('config', 'UA-145136006-1');
         `
       };
     }
@@ -27,6 +27,7 @@ class MyDocument extends Document {
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"
           />
+          <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145136006-1" />
           <link rel="stylesheet" href="/static/css/styles.css" />
           <React.Fragment>
             <script dangerouslySetInnerHTML={this.setGoogleTags()} />
