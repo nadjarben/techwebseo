@@ -6,6 +6,7 @@ import ContactForm from '../components/form/ContactForm';
 
 const Contact = () => {
     const head = () => (
+        
         <Head>
             <title>
             Contactez nous pour toute questions ou proposition de freelance | {APP_NAME}

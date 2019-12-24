@@ -47,7 +47,7 @@ const Index = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="container-fluid">
+                    <div className="container">
                         <div className="row">
                             <div className="col-md-4">
                                 <div className="flip flip-horizontal">
