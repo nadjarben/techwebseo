@@ -1,7 +1,22 @@
 import Layout from '../components/Layout';
 import Link from 'next/link';
+import { useEffect } from 'react';
 
 const Index = () => {
+
+    useEffect(() => {
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker
+              .register('/service-worker.js')
+              .then(registration => {
+                console.log('service worker registration successful')
+              })
+              .catch(err => {
+                console.warn('service worker registration failed', err.message)
+              })
+          }
+    }, [])
+
     return (
         <Layout>
             <article className="overflow-hidden">
