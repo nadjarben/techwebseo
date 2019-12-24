@@ -29,6 +29,13 @@ class MyDocument extends Document {
           />
           <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145136006-1" />
           <link rel="stylesheet" href="/static/css/styles.css" />
+          <link rel="manifest" href="/static/manifest.json" />
+          <link rel="apple-touch-icon" sizes="72x72" href="/static/images/icons/apple-touch-icon.png"/>
+          <link rel="icon" type="image/png" sizes="32x32" href="/static/images/icons/favicon-32x32.png"/>
+          <link rel="icon" type="image/png" sizes="16x16" href="/static/images/icons/favicon-16x16.png"/>
+          <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"/>
+          <meta name="msapplication-TileColor" content="#da532c"/>
+          <meta name="theme-color" content="#ffffff" />
           <React.Fragment>
             <script dangerouslySetInnerHTML={this.setGoogleTags()} />
           </React.Fragment>
