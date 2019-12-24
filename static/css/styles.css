@@ -1,5 +1,6 @@
 #nprogress .bar {
     height: 4px !important;
+    color: orange !important;
 }
 
 .ql-editor {
