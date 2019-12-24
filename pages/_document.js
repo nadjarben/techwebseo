@@ -5,8 +5,8 @@ import { register, unregister } from 'next-offline/runtime'
 
 
 class MyDocument extends Document {
-  componentDidMount () {
-    register()
+  componentDidMount = () => {
+    register();
   }
   setGoogleTags() {
     if (publicRuntimeConfig.PRODUCTION) {
