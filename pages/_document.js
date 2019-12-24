@@ -3,20 +3,20 @@ import getConfig from 'next/config';
 const { publicRuntimeConfig } = getConfig();
 
 class MyDocument extends Document {
-
   setGoogleTags() {
-    if(publicRuntimeConfig.PRODUCTION) {
+    if (publicRuntimeConfig.PRODUCTION) {
       return {
         __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
 
-            gtag('config', 'UA-145136006-1');
+          gtag('config', 'UA-147955896-1');
         `
-      }
+      };
     }
   }
+
   render() {
     return (
       <Html lang="en">
@@ -28,8 +28,9 @@ class MyDocument extends Document {
             href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"
           />
           <link rel="stylesheet" href="/static/css/styles.css" />
-          <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145136006-1" />
-          <script dangerouslySetInnerHTML={this.setGoogleTags()} />
+          <React.Fragment>
+            <script dangerouslySetInnerHTML={this.setGoogleTags()} />
+          </React.Fragment>
         </Head>
         <body>
           <Main />

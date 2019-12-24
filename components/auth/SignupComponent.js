@@ -2,12 +2,13 @@ import { useState, useEffect } from 'react';
 import { signup, isAuth, preSignup } from '../../actions/auth';
 import Router from 'next/router';
 import Link from 'next/link';
+import LoginGoogle from './LoginGoogle';
 
 const SignupComponent = () => {
     const [values, setValues] = useState({
-        name: 'Ryan',
-        email: 'ryan@gmail.com',
-        password: 'rrrrrr',
+        name: '',
+        email: '',
+        password: '',
         error: '',
         loading: false,
         message: '',
@@ -97,6 +98,7 @@ const SignupComponent = () => {
             {showError()}
             {showLoading()}
             {showMessage()}
+            <LoginGoogle />
             {showForm && signupForm()}
             <br />
             <Link href="/auth/password/forgot">
