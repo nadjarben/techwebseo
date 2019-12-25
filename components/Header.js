@@ -8,15 +8,12 @@ import {
   Collapse,
   Navbar,
   NavbarToggler,
-  NavbarBrand,
   Nav,
   NavItem,
-  NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem
+  NavLink
 } from 'reactstrap';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
 import '.././node_modules/nprogress/nprogress.css';
 import Search from './blog/Search';
 
@@ -33,9 +30,10 @@ const Header = () => {
 
   return (
     <React.Fragment>
-      <Navbar color="light" light expand="md">
+      <AppBar color="transparent" light expand="md">
+      <Toolbar>
         <Link href="/">
-          <NavLink className="font-weight-bold">{APP_NAME}</NavLink>
+          <NavLink className="font-weight-bold nav-title">{APP_NAME}</NavLink>
         </Link>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
@@ -72,7 +70,7 @@ const Header = () => {
             {isAuth() && isAuth().role === 0 && (
               <NavItem>
                 <Link href="/user">
-                  <NavLink>{`${isAuth().name}'s Dashboard`}</NavLink>
+                  <NavLink>Dashboard</NavLink>
                 </Link>
               </NavItem>
             )}
@@ -80,7 +78,7 @@ const Header = () => {
             {isAuth() && isAuth().role === 1 && (
               <NavItem>
                 <Link href="/admin">
-                  <NavLink>{`${isAuth().name}'s Dashboard`}</NavLink>
+                  <NavLink>Dashboard</NavLink>
                 </Link>
               </NavItem>
             )}
@@ -100,7 +98,8 @@ const Header = () => {
             </NavItem>
           </Nav>
         </Collapse>
-      </Navbar>
+        </Toolbar>
+      </AppBar>
       <Search />
     </React.Fragment>
   );
