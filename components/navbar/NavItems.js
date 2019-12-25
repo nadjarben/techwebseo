@@ -42,9 +42,6 @@ export default function TemporaryDrawer() {
           </Link>
         )}
           <a href="/user/crud/blog" className="nav-items"><ListItem button>ECRIRE UN ARTICLE</ListItem></a>
-          <Link to="/blogs">
-            <a>test</a>
-          </Link>
       </List>
       <Divider />
     </div>

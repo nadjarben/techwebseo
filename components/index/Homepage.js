@@ -50,6 +50,9 @@ export default function Homepage() {
                             ARTICLES
                         </Fab></a>         
                 </div>
+                <Link href="/blogs">
+            <a><button>test</button></a>
+          </Link>
             </div>
         </div>
     )
