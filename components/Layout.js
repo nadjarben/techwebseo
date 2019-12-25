@@ -1,5 +1,5 @@
-import Header from './Header';
 import Header3 from './navbar/Header3';
+import Footer from '../components/app/Footer';
 
 const Layout = ({ children }) => {
     return (
@@ -8,6 +8,7 @@ const Layout = ({ children }) => {
             <React.Fragment>
                 <div style={{marginTop:'12vh'}}>{children}</div>
             </React.Fragment>
+            <Footer />
         </React.Fragment>
     );
 };

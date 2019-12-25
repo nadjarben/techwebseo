@@ -30,16 +30,18 @@ export default function TemporaryDrawer() {
       onKeyDown={toggleDrawer(side, false)}
     >
       <List>
-        <ListItem><Link href="/"><a className="nav-items">Accueil</a></Link></ListItem>
-        <ListItem><Link href="/blogs"><a className="nav-items">Articles</a></Link></ListItem>
-        <ListItem><Link href="/contact"><a className="nav-items">Contact</a></Link></ListItem>
+        <Link href="/"><a className="nav-items"><ListItem button>ACCUEIL</ListItem></a></Link>
+        <Link href="/blogs"><a className="nav-items"><ListItem button>ARTICLES</ListItem></a></Link>
+        <Link href="/contact"><a className="nav-items"><ListItem button>CONTACT</ListItem></a></Link>
         {isAuth() && isAuth().role === 0 && (
-          <ListItem><Link href="/user"><a className="nav-items">Dashboard</a></Link></ListItem>
+          <Link href="/user"><a className="nav-items"><ListItem button>DASHBOARD</ListItem></a></Link>
         )}
         {isAuth() && isAuth().role === 1 && (
-          <ListItem><Link href="/admin"><a className="nav-items">Dashboard</a></Link></ListItem>
+          <Link href="/admin">
+          <a className="nav-items"><ListItem button>DASHBOARD</ListItem></a>
+          </Link>
         )}
-        <ListItem><Link href="/user/crud/blog"><a className="nav-items">Ecrire un article</a></Link></ListItem>
+          <a href="/user/crud/blog" className="nav-items"><ListItem button>ECRIRE UN ARTICLE</ListItem></a>
       </List>
       <Divider />
     </div>

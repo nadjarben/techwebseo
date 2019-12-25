@@ -40,7 +40,8 @@ HideOnScroll.propTypes = {
 
 export default function HideAppBar(props) {
   const [displaySearch, setDisplaySearch] = useState(false)
-  
+  const title = `< ${APP_NAME} `
+  const slash = <span className="nav-title-slash">/</span>
   return (
     <React.Fragment>
       <HideOnScroll {...props}>
@@ -49,7 +50,7 @@ export default function HideAppBar(props) {
             <NavItems />
               <div className="nav-space" />
               <Link href="/">
-                <Typography variant="h6" className="nav-title"><a>{APP_NAME}</a></Typography>
+                <Typography variant="h6" className="nav-title"><a>{title}{slash}></a></Typography>
               </Link>
             <div className="nav-space" />
             <div onClick={() => setDisplaySearch(!displaySearch)}>

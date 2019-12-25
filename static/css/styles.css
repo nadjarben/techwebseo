@@ -1,3 +1,7 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
 #nprogress .bar {
     height: 4px !important;
     background-color: orange !important;
@@ -91,7 +95,12 @@
         16px 16px rgba(0, 0, 0, 0.04), 17px 17px rgba(0, 0, 0, 0.04), 18px 18px rgba(0, 0, 0, 0.04),
         19px 19px rgba(0, 0, 0, 0.04), 1.25rem 1.25rem rgba(0, 0, 0, 0.04);
 }
-
+.nav-title {
+    color: black !important;
+}
+.nav-title-slash {
+    color: orange;
+}
 .nav-title:hover {
     cursor: pointer;
     font-weight: bold;
@@ -127,6 +136,7 @@
 }
 .nav-items {
     color: black;
+    padding: 15px;
 }.nav-items:hover {
     color: black;
     text-decoration: none;
@@ -143,4 +153,117 @@
 .search-bar {
     position: fixed;
 }
+.btn-search {
+    color: orange;
+    border-color: orange;
+}.btn-search:hover {
+    background-color: orange;
+    color: white;
+    border-color: white;
+}.btn-search:active {
+    background-color: orange !important;
+    color: white !important;
+    border-color: white !important;
+}
+.input-search:focus {
+    box-shadow: orange;
+    border-color: orange;
+    border-width: 2px;
+    -webkit-box-shadow: none;
+}
 
+
+/*
+INDEX
+*/
+.descri {
+    margin-top: 30vh;
+    height: 70vh;
+}
+.link {
+    padding-right : 25px;
+    cursor : pointer;
+    color: orange
+}
+.link:hover {
+    color: black;
+    text-decoration: none;
+}
+.link2 {
+    cursor : pointer;
+    color: black;
+    padding: 10px;
+}
+.link2:hover {
+    color: black;
+    text-decoration: none;
+}
+.logo {
+    text-align: center;
+}
+.pics {
+    margin-top: 15vh;
+}
+.list-services {
+    list-style-type: decimal
+}
+.text-deskopt-display {
+    text-align: center;
+    margin-top: 5vh;
+}
+
+.respons {
+    margin-top: 10vh;
+}
+.serv {
+    margin-top: 20vh;
+    height: auto;
+}
+.text-serv {
+    padding-left: 250px;
+    padding-right: 250px;
+}
+.footer {
+    padding: 8vh
+}
+
+@media only screen and (max-width: 600px) {
+    .descri {
+        margin-top: 10vh;
+        height: 90vh;
+    }
+    .text-descri {
+        margin-top: 9vh;
+        text-align:center;
+    }
+    .opt {
+        font-size: 22px;
+    }
+    .respons {
+        margin-top: 5vh;
+        height: auto;
+    }
+    .serv {
+        margin-top: 10vh;
+        height: auto;
+    }
+    .text-serv {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .pics {
+        margin-top: 5vh;
+    }
+    .footer {
+        padding:4vh
+    }
+    .footer-contact {
+        margin-top: 3vh;
+    }
+    .mentions {
+        font-size: 2px;
+    }
+    .logo {
+        margin-left: 0px;
+    }
+} 
