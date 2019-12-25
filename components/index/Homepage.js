@@ -33,7 +33,6 @@ export default function Homepage() {
                         <p style={{color:'orange'}}> #Next.Js</p>
                     </TextLoop>{" "}
                     </h1>
-                    <Link href="/blogs">Ceci est un test</Link>
                     <br/>
                     <h5>Front-End React Development</h5>
                     <h5>Back-End Node Development</h5>
@@ -47,9 +46,11 @@ export default function Homepage() {
                     </Link>
                     <br/>
                     <br/>
-                        <a href="/blogs"><Fab style={{backgroundColor:'orange', fontWeight:'bold'}} variant="extended" aria-label="delete">
+                    <Link href="/blogs">
+                        <a><Fab style={{backgroundColor:'orange', fontWeight:'bold'}} variant="extended" aria-label="delete">
                             ARTICLES
-                        </Fab></a>         
+                        </Fab></a>
+                    </Link>       
                 </div>
             </div>
         </div>
