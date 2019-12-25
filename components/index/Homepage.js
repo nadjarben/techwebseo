@@ -3,6 +3,7 @@ import Link from 'next/link';
 import TextLoop from "react-text-loop";
 import Fab from '@material-ui/core/Fab';
 import logo from '../../static/images/techweblogo.png';
+import Typed from 'react-typed';
 //import { zoomInRight } from 'react-animations';
 //import Radium, {StyleRoot} from 'radium';
 
@@ -12,16 +13,22 @@ import logo from '../../static/images/techweblogo.png';
      // animationName: Radium.keyframes(zoomInRight, 'bounce')
     //}
   //}
+  const test = () => "< "
 
 export default function Homepage() {
     return (
         <div className='container descri'>
             <div className='row'>
 
-                <div className='col-md-6 order-md-2 logo'>
-                        <div >
-                            <img src={logo} width='80%' alt='logo' />
-                        </div>
+                <div className='col-md-6 order-md-2 logo-div'>
+                    <div className="react-typed-logo">
+                        <span className="logo-title">{test()}TECHNOWEB /></span>
+                        <br/>
+                        <Typed
+                        strings={['{... webDevelopers}']}
+                        typeSpeed={80}
+                        />    
+                    </div>
                 </div>
 
                 <div className='col-md-6 order-md-1 text-descri'>
@@ -38,12 +45,6 @@ export default function Homepage() {
                     <h5>Back-End Node Development</h5>
                     <h5>UX/UI Design</h5>
                     <h5>Application Testing</h5>
-                    <br/>
-                    <Link href="/">
-                        <a><Fab style={{backgroundColor:'orange', fontWeight:'bold'}} variant="extended" aria-label="delete">
-                            UNE QUESTION A PROPOS DES TECHNOLOGIES WEB ?
-                        </Fab></a>
-                    </Link>
                     <br/>
                     <br/>
                     <Link href="/blogs">

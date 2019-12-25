@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { APP_NAME } from '../../config';
 import Link from 'next/link';
+import Router from 'next/router';
+import NProgress from 'nprogress';
 import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -11,9 +13,11 @@ import NavItems from './NavItems';
 import NavProfile from './NavProfile';
 import Search from '../blog/Search';
 import SearchButton from './SearchButton';
+import '../.././node_modules/nprogress/nprogress.css';
 
-
-
+Router.onRouteChangeStart = url => NProgress.start();
+Router.onRouteChangeComplete = url => NProgress.done();
+Router.onRouteChangeError = url => NProgress.done();
 
 function HideOnScroll(props) {
   const { children, window } = props;
