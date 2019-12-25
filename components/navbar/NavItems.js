@@ -31,7 +31,7 @@ export default function TemporaryDrawer() {
     >
       <List>
         <Link href="/"><a className="nav-items"><ListItem button>ACCUEIL</ListItem></a></Link>
-        <Link href="/blogs"><a className="nav-items"><ListItem button>ARTICLES</ListItem></a></Link>
+        <a href="/blogs" className="nav-items"><ListItem button>ARTICLES</ListItem></a>
         <Link href="/contact"><a className="nav-items"><ListItem button>CONTACT</ListItem></a></Link>
         {isAuth() && isAuth().role === 0 && (
           <Link href="/user"><a className="nav-items"><ListItem button>DASHBOARD</ListItem></a></Link>

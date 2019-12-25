@@ -46,11 +46,9 @@ export default function Homepage() {
                     </Link>
                     <br/>
                     <br/>
-                    <Link href="/blogs">
-                        <a><Fab style={{backgroundColor:'orange', fontWeight:'bold'}} variant="extended" aria-label="delete">
+                        <a href=".blogs"><Fab style={{backgroundColor:'orange', fontWeight:'bold'}} variant="extended" aria-label="delete">
                             ARTICLES
-                        </Fab></a>
-                    </Link>              
+                        </Fab></a>         
                 </div>
             </div>
         </div>
