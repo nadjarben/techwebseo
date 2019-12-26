@@ -26,7 +26,7 @@ export default function Presentation() {
                     <li>Une maintenance et des évolutions facilitées grâce à un code propre, structuré et organisé.</li>
                     </ul>
                     <br/>
-                    <Link href='/presentation'>
+                    <Link href='/blogs'>
                         <a><Fab style={{backgroundColor:'orange', fontWeight:'bold'}} variant="extended" aria-label="delete">
                             En savoir plus
                         </Fab></a>

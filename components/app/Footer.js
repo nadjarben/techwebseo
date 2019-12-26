@@ -37,7 +37,7 @@ export default function Footer() {
             </div>
             <div style={{backgroundColor:'black'}}>
                 <div className='container text-center mentions' style={{color:'darkgrey', padding:'2vh', fontSize:'10px'}}>
-                    TechWeb - Developpeurs Freelances - Tous droits réservés - 2018
+                    Technoweb - Developpeurs Freelances - Tous droits réservés - 2018
                 </div>
             </div>
         </div>

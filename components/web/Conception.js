@@ -52,9 +52,11 @@ export default function Conception() {
             </div>
             <div className='text-center'>
                 <Link to='/portfolio'>
+                    <a>
                     <Fab style={{color:'orange', fontWeight:'bold'}} variant="extended" aria-label="delete">
                     ACCÉDER AU PORTFOLIO
                     </Fab>
+                    </a>
                 </Link>
             </div>
         </div>

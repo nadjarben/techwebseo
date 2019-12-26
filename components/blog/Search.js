@@ -16,7 +16,7 @@ const Search = () => {
     const searchSubmit = e => {
         e.preventDefault();
         listSearch({ search }).then(data => {
-            setValues({ ...values, results: data, searched: true, message: `${data.length} blogs found` });
+            setValues({ ...values, results: data, searched: true, message: `${data.length} blogs trouv` });
         });
     };
 
