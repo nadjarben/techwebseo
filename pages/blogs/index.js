@@ -106,7 +106,7 @@ const Blogs = ({ blogs, categories, tags, totalBlogs, blogsLimit, blogSkip, rout
                         <header>
                             <div className="col-md-12 pt-3">
                                 <h1 className="text-center blog-title">
-                                    Articles et tutoriels sur le developoment
+                                    Articles et tutoriels sur le développement
                                 </h1>
                             </div>
                             <section>
