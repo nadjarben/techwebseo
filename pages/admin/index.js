@@ -6,7 +6,7 @@ const AdminIndex = () => {
     return (
         <Layout>
             <Admin>
-                <div className="container-fluid">
+                <div className="container-fluid" style={{marginBottom: '30vh'}}>
                     <div className="row">
                         <div className="col-md-12 pt-5 pb-5">
                             <h2>Admin Dashboard</h2>
@@ -42,7 +42,6 @@ const AdminIndex = () => {
                                 </li>
                             </ul>
                         </div>
-                        <div className="col-md-8">right</div>
                     </div>
                 </div>
             </Admin>

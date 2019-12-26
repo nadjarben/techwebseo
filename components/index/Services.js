@@ -1,8 +1,7 @@
 import Button from '@material-ui/core/Button';
 import react from '../../static/images/react.png';
 import wp from '../../static/images/wp.png'
-import seo from '../../static/images/seo.png';
-import ShadowEffect from '../app/effects/ShadowEffect';
+import seo from '../../static/images/seo.png'
 
 export default function Services() {
     return (
@@ -52,7 +51,7 @@ export default function Services() {
                 </div>
                 </div>
                 <div className='col-md-4'>
-                    <ShadowEffect><img src={wp} alt='wp' width='33%'/></ShadowEffect>
+                    <img src={wp} alt='wp' width='33%'/>
                     <h5 style={{marginTop:'2vh', fontWeight:'bold'}}>
                         Développement Node.Js
                     </h5>

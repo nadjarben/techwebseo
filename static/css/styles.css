@@ -278,35 +278,108 @@ INDEX
         margin-left: 0px;
     }
 } 
+/*
+WEB
+*/
+.devis {
+    margin-top: 10vh;
+    height: 90vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top right;
+}
+.conception {
+    margin-top: 10vh;  
+    margin-bottom: 15vh
+}
 
+
+@media only screen and (max-width: 600px) {
+    .devis {
+        margin-top: 10vh;
+        height: 90vh;
+        background-position-y: 30vh;
+    }
+    .button {
+        margin-top: 5vh;
+    }
+} 
 
 /*
-SHADOWEFFECT
+PORTFOLIO
 */
 
-.jm-logo span {
-    content: "";
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 100%;
-    max-width: 0;
-    background: #fff;
-    opacity: 0.4;
-    filter: alpha(opacity=40);
-    -webkit-transition: none;
-    -ms-transition: none;
-    -o-transition: none;
-    transition: none;
+.port {
+    margin-top: 10vh;
+    height: 90vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top right;
 }
-.jm-logo a:hover span {
-    max-width: 100%;
-    background: #fff;
-    opacity: 0;
-    filter: alpha(opacity=0);
-    -webkit-transition: all 0.3s ease-out;
-    -ms-transition: all 0.3s ease-out;
-    -o-transition: all 0.3s ease-out;
-    transition: all 0.3s ease-out;
+.port2 {
+    margin-top: 10vh;
+    height: 90vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top right;
 }
+.pic:hover {
+    background-color: black;
+    opacity: 0.2;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+    .port2 {
+        height: auto;
+    }
+    .port {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-position-y: 20vh;
+    }
+} 
+
+
+.about {
+    margin-top: 15vh;
+}
+.cv {
+    margin-top: 10vh;
+}
+.share-text {
+    margin-top: 15vh;
+}
+
+/*
+ABOUT
+*/
+
+@media only screen and (max-width: 600px) {
+    .about {
+        margin-top: 10vh;
+        height: auto;
+    }
+    .cv {
+        margin-top: 5vh
+    }
+    .share-text {
+        margin-top: 3vh;
+    }
+    .share-pic {
+        margin-top: 10vh;
+    }
+}
+
+/*
+WEB
+*/
+.blog-title {
+    font-weight: bold;
+}
+@media only screen and (max-width: 600px) {
+    .blog-title {
+        font-size: 20px;
+        font-weight: bold;
+    }

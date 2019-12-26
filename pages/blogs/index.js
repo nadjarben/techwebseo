@@ -105,8 +105,8 @@ const Blogs = ({ blogs, categories, tags, totalBlogs, blogsLimit, blogSkip, rout
                     <div className="container-fluid">
                         <header>
                             <div className="col-md-12 pt-3">
-                                <h1 className="display-4 font-weight-bold text-center">
-                                    Programming blogs and tutorials
+                                <h1 className="text-center blog-title">
+                                    Articles et tutoriels sur le developoment
                                 </h1>
                             </div>
                             <section>

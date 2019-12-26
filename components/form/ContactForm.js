@@ -39,7 +39,7 @@ const ContactForm = ({ authorEmail }) => {
         setValues({ ...values, [name]: e.target.value, error: false, success: false, buttonText: 'Send Message' });
     };
 
-    const showSuccessMessage = () => success && <div className="alert alert-info">Thank you for contacting us.</div>;
+    const showSuccessMessage = () => success && <div className="alert alert-info">Merci de nous avoir contactés.</div>;
 
     const showErrorMessage = () => (
         <div className="alert alert-danger" style={{ display: error ? '' : 'none' }}>
@@ -63,7 +63,7 @@ const ContactForm = ({ authorEmail }) => {
                 </div>
 
                 <div className="form-group">
-                    <label className="lead">Name</label>
+                    <label className="lead">Nom</label>
                     <input type="text" onChange={handleChange('name')} className="form-control" value={name} required />
                 </div>
 

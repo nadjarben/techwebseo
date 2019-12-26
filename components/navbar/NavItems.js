@@ -32,7 +32,11 @@ export default function TemporaryDrawer() {
       <List>
         <Link href="/"><a className="nav-items"><ListItem button>ACCUEIL</ListItem></a></Link>
         <Link href="/blogs"><a className="nav-items"><ListItem button>ARTICLES</ListItem></a></Link>
+        <Link href="/web"><a className="nav-items"><ListItem button>WEB</ListItem></a></Link>
+        <Link href="/portfolio"><a className="nav-items"><ListItem button>PORTFOLIO</ListItem></a></Link>
+        <Link href="/about"><a className="nav-items"><ListItem button>À PROPOS</ListItem></a></Link>
         <Link href="/contact"><a className="nav-items"><ListItem button>CONTACT</ListItem></a></Link>
+        <Divider />
         {isAuth() && isAuth().role === 0 && (
           <Link href="/user"><a className="nav-items"><ListItem button>DASHBOARD</ListItem></a></Link>
         )}
@@ -42,7 +46,7 @@ export default function TemporaryDrawer() {
           </Link>
         )}
         
-          <a href="/user/crud/blog" className="nav-items"><ListItem button>ECRIRE UN ARTICLE</ListItem></a>
+          <a href="/user/crud/blog" className="nav-items" style={{fontWeight: 'bold'}}><ListItem button>ECRIRE UN ARTICLE</ListItem></a>
           
       </List>
       <Divider />
