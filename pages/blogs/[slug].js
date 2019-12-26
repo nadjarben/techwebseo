@@ -97,7 +97,7 @@ const SingleBlog = ({ blog, query }) => {
 
                             <section>
                                 <div className="container">
-                                    <h1 className="display-2 pb-3 pt-3 text-center font-weight-bold">{blog.title}</h1>
+                                    <h1 className="display-2 pb-3 pt-3 text-center font-weight-bold blogs-title">{blog.title}</h1>
                                     <p className="lead mt-3 mark">
                                         Written by{' '}
                                         <Link href={`/profile/${blog.postedBy.username}`}>

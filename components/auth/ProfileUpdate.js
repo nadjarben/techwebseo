@@ -90,10 +90,6 @@ const ProfileUpdate = () => {
                 <input onChange={handleChange('name')} type="text" value={name} className="form-control" />
             </div>
             <div className="form-group">
-                <label className="text-muted">Email</label>
-                <input onChange={handleChange('email')} type="text" value={email} className="form-control" />
-            </div>
-            <div className="form-group">
                 <label className="text-muted">About</label>
                 <textarea onChange={handleChange('about')} type="text" value={about} className="form-control" />
             </div>
