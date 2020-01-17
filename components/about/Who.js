@@ -1,7 +1,7 @@
 import cvphoto from '../../static/images/dev.png';
 import share from '../../static/images/share.png';
 import Fab from '@material-ui/core/Fab';
-import Link from 'next/link';
+import { Link } from '../../18n';
 import { zoomIn } from 'react-animations';
 import Radium, {StyleRoot} from 'radium';
 

@@ -1,0 +1,33 @@
+.index {
+  &-btns {
+    margin-top: 15vh;
+  }
+}
+.logo-sw {
+  width: 30%;
+  margin-top: 20vh;
+  margin-top: 12vh;
+
+}
+.home-btn {
+  color: white;
+  height: 7vh;
+  width: 320px;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .logo-sw {
+    margin-top: 20vh;
+    width: 70%;
+  }
+  .home-btn {
+    color: white;
+    height: 7vh;
+    width: 220px;
+  }
+}
+
+

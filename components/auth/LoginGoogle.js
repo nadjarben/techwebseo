@@ -1,9 +1,8 @@
-import Link from 'next/link';
-import { useState, useEffect } from 'react';
-import Router from 'next/router';
+import { Router } from '../../18n'
 import GoogleLogin from 'react-google-login';
 import { loginWithGoogle, authenticate, isAuth } from '../../actions/auth';
 import { GOOGLE_CLIENT_ID } from '../../config';
+
 
 const LoginGoogle = () => {
     const responseGoogle = response => {
@@ -11,7 +10,7 @@ const LoginGoogle = () => {
         const tokenId = response.tokenId;
         const user = { tokenId };
 
-        loginWithGoogle(user).then(data => {
+        loginWithGoogle(user).then(data => {    
             if (data.error) {
                 console.log(data.error);
             } else {
@@ -19,7 +18,7 @@ const LoginGoogle = () => {
                     if (isAuth() && isAuth().role === 1) {
                         Router.push(`/admin`);
                     } else {
-                        Router.push(`/user`);
+                        Router.back();
                     }
                 });
             }
@@ -27,16 +26,18 @@ const LoginGoogle = () => {
     };
 
     return (
-        <div className="pb-3">
             <GoogleLogin
+                className="btn-google"
                 clientId={`${GOOGLE_CLIENT_ID}`}
                 buttonText="Login with Google"
                 onSuccess={responseGoogle}
                 onFailure={responseGoogle}
                 theme="dark"
             />
-        </div>
     );
 };
+LoginGoogle.getInitialProps = async () => ({
+    namespacesRequired: ['connection'],
+})
 
 export default LoginGoogle;

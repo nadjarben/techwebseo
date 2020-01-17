@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from 'next/link';
+import { Link } from '../../18n';
 import { signout, isAuth } from '../../actions/auth';
 import Drawer from '@material-ui/core/Drawer';
 import IconButton from '@material-ui/core/IconButton';
@@ -7,9 +7,11 @@ import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import MenuIcon from '@material-ui/icons/Menu';
+import { withTranslation, Router } from '../../18n';
 
 
-export default function TemporaryDrawer() {
+
+ function NavItems({ t }) {
   const [state, setState] = React.useState({
     left: false
   });
@@ -30,26 +32,42 @@ export default function TemporaryDrawer() {
       onKeyDown={toggleDrawer(side, false)}
     >
       <List>
-        <Link href="/"><a className="nav-items"><ListItem button>ACCUEIL</ListItem></a></Link>
-        <Link href="/blogs"><a className="nav-items"><ListItem button>ARTICLES</ListItem></a></Link>
-        <Link href="/web"><a className="nav-items"><ListItem button>WEB</ListItem></a></Link>
-        <Link href="/portfolio"><a className="nav-items"><ListItem button>PORTFOLIO</ListItem></a></Link>
-        <Link href="/about"><a className="nav-items"><ListItem button>À PROPOS</ListItem></a></Link>
-        <Link href="/contact"><a className="nav-items"><ListItem button>CONTACT</ListItem></a></Link>
-        <Divider />
+        <Link href="/"><a className="nav-items"><ListItem button>{t('navbarHome')}</ListItem></a></Link>
+        <Link href="/blog"><a className="nav-items"><ListItem button>{t('navbarBlog')}</ListItem></a></Link>
         {isAuth() && isAuth().role === 0 && (
-          <Link href="/user"><a className="nav-items"><ListItem button>DASHBOARD</ListItem></a></Link>
+        <Link href="/user"><a className="nav-items"><ListItem button>{t('navbarAccount')}</ListItem></a></Link>
         )}
         {isAuth() && isAuth().role === 1 && (
           <Link href="/admin">
           <a className="nav-items"><ListItem button>DASHBOARD</ListItem></a>
           </Link>
         )}
-        
-          <a href="/user/crud/blog" className="nav-items" style={{fontWeight: 'bold'}}><ListItem button>ECRIRE UN ARTICLE</ListItem></a>
-          
+            {!isAuth() && (
+              <React.Fragment>
+                <ListItem button>
+                  <Link href="/signin">
+            <a className='nav-items'>{t('navbarSignin')}</a>
+                  </Link>
+                </ListItem>
+
+                <ListItem button>
+                  <Link href="/signup">
+                    <a className='nav-items'>{t('navbarSignup')}</a>
+                  </Link>
+                  </ListItem>
+              </React.Fragment>
+
+    )}
+    {isAuth() && (
+              <ListItem button>
+                <a className='nav-items'
+                onClick={() => signout(() => Router.replace(`/signin`)
+                )}>
+                  {t('navbarSignout')}
+                </a>
+              </ListItem>
+            )}         
       </List>
-      <Divider />
     </div>
   );
 
@@ -69,3 +87,5 @@ export default function TemporaryDrawer() {
     </div>
   );
 }
+
+export default withTranslation('app')(NavItems)

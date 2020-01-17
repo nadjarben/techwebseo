@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import Link from 'next/link';
+import { Link } from '../../18n';
 import Router from 'next/router';
 import { getCookie } from '../../actions/auth';
 import { create, getCategories, removeCategory } from '../../actions/category';

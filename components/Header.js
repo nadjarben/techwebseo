@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Link from 'next/link';
-import Router from 'next/router';
+import { Router } from '../18n';
 import NProgress from 'nprogress';
 import { APP_NAME } from '../config';
 import { signout, isAuth } from '../actions/auth';

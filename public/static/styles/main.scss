@@ -1,0 +1,113 @@
+@import './index';
+@import './services';
+@import './menu';
+@import './pack';
+@import './user';
+@import './profile';
+
+
+html, body {
+    font-family: 'Open Sans', sans-serif;
+}
+a {
+    text-decoration: none !important;
+}
+
+.layout {
+    background: url(../images/bg-sidewalk.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; 
+    min-height: 88vh;
+}
+.logo-sw-header {
+    width: 13%;
+}
+
+.nav-item {
+    background-color: black;
+    height: 100vh;
+    width: 220px;
+    padding-top: 5vh;
+
+}
+.nav-items {
+    color: white !important;
+    &:hover {
+        color:white;
+        text-decoration: none;
+        text-shadow: none;
+    }
+}
+.nav-items-lg {
+    color: white;
+    padding-left: 40px;
+    &:hover {
+        color:white;
+        text-decoration: none;
+        text-shadow: none;
+        cursor: pointer;
+    }
+}
+.layout-title {
+    padding-top: 2vh;
+}
+.layout-text {
+    padding-top: 1vh;
+    justify-content: center;
+    padding-left: 3%;
+    padding-right: 3%;
+}
+
+.btn-google {
+    width: 60%;
+    padding-left: 100px;
+}
+.modal-devis {
+    min-height: 40vh;
+    padding-top: 3vh !important;
+    padding-bottom: 3vh!important;
+    background-color: black;
+    padding-inline-start: 20%;
+    justify-content: center !important;
+    border-color: white;
+}
+.modal-title {
+    background-color: black;
+    color: white;
+    border-style: outset!important;
+    border-color: white !important;
+    border-width: 0px;
+    border-bottom-width: 1px!important;
+}
+.btn-modal-devis {
+    width: 200px!important;
+    height: 60px!important;
+    border-style: outset!important;
+    border-color: white !important;
+    border-radius: 5px!important;
+    border-width: 1px!important;
+    color: white !important;
+}
+.modal-textfield {
+    background-color: white !important;
+}
+.btn-modal-devis-send {
+    border-style: outset!important;
+    border-color: white !important;
+    border-radius: 5px!important;
+    border-width: 1px!important;
+    color: white !important;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+    .logo-sw-header {
+        width: 50%;
+    }
+    .layout {
+        height: 72vh;
+    }
+}

@@ -1,8 +1,8 @@
-import Layout from '../../components/Layout';
+import Layout from '../../components/layout/Layout';
 import Admin from '../../components/auth/Admin';
-import Link from 'next/link';
+import { Link, withTranslation } from '../../18n'
 
-const AdminIndex = () => {
+const AdminIndex = ({ t }) => {
     return (
         <Layout>
             <Admin>
@@ -13,28 +13,6 @@ const AdminIndex = () => {
                         </div>
                         <div className="col-md-4">
                             <ul className="list-group">
-                                <li className="list-group-item">
-                                    <Link href="/admin/crud/category-tag">
-                                        <a>Create Category</a>
-                                    </Link>
-                                </li>
-
-                                <li className="list-group-item">
-                                    <Link href="/admin/crud/category-tag">
-                                        <a>Create Tag</a>
-                                    </Link>
-                                </li>
-
-                                <li className="list-group-item">
-                                    <a href="/admin/crud/blog">Create Blog</a>
-                                </li>
-
-                                <li className="list-group-item">
-                                    <Link href="/admin/crud/blogs">
-                                        <a>Update/Delete Blog</a>
-                                    </Link>
-                                </li>
-
                                 <li className="list-group-item">
                                     <Link href="/user/update">
                                         <a>Update Profile</a>
@@ -48,5 +26,7 @@ const AdminIndex = () => {
         </Layout>
     );
 };
-
-export default AdminIndex;
+AdminIndex.getInitialProps = async () => ({
+    namespacesRequired: ['admin'],
+})
+export default withTranslation('admin')(AdminIndex)

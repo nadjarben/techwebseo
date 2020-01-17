@@ -1,0 +1,7 @@
+.list-user {
+    color: black;
+    &:hover {
+        color: red;
+        text-decoration: none;
+    }
+}

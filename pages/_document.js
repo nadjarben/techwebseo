@@ -1,5 +1,8 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 import getConfig from 'next/config';
+import { ServerStyleSheets } from '@material-ui/styles';
+import { ServerStyleSheet } from 'styled-components';
+import flush from 'styled-jsx/server';
 const { publicRuntimeConfig } = getConfig();
 
 class MyDocument extends Document {
@@ -16,6 +19,35 @@ class MyDocument extends Document {
       };
     }
   }
+  static async getInitialProps (ctx) {
+    const sheet = new ServerStyleSheet ();
+    const sheets = new ServerStyleSheets ();
+    const originalRenderPage = ctx.renderPage;
+
+    try {
+      ctx.renderPage = () => originalRenderPage ({
+        enhanceApp: App => props => sheet.collectStyles (
+          sheets.collect (<App {...props} />),
+        ),
+      });
+
+      const initialProps = await Document.getInitialProps (ctx);
+
+      return {
+        ...initialProps,
+        styles: (
+          <>
+            {initialProps.styles}
+            {sheets.getStyleElement ()}
+            {sheet.getStyleElement ()}
+            {flush () || null}
+          </>
+        ),
+      };
+    } finally {
+      sheet.seal ();
+    }
+  }
 
   render() {
     return (
@@ -29,8 +61,7 @@ class MyDocument extends Document {
           />
           <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
           <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145136006-1" />
-          <link rel="stylesheet" href="/static/css/styles.css" />
-          <link rel="manifest" href="/static/manifest.json" />
+          <link rel="manifest" href="/public/static/manifest.json" />
           <link rel="apple-touch-icon" sizes="72x72" href="/static/images/icons/apple-touch-icon.png"/>
           <link rel="icon" type="image/png" sizes="32x32" href="/static/images/icons/favicon-32x32.png"/>
           <link rel="icon" type="image/png" sizes="16x16" href="/static/images/icons/favicon-16x16.png"/>

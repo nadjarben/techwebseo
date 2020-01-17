@@ -1,6 +1,6 @@
-import Link from 'next/link';
+import { Link } from '../../18n';
 import { useState, useEffect } from 'react';
-import Router from 'next/router';
+import { Router } from '../../18n';
 import dynamic from 'next/dynamic';
 import { withRouter } from 'next/router';
 import { getCookie, isAuth } from '../../actions/auth';
@@ -195,10 +195,8 @@ const BlogUpdate = ({ router }) => {
             } else {
                 setValues({ ...values, title: '', success: `Blog titled "${data.title}" is successfully updated` });
                 if (isAuth() && isAuth().role === 1) {
-                    // Router.replace(`/admin/crud/${router.query.slug}`);
                     Router.replace(`/admin`);
                 } else if (isAuth() && isAuth().role === 0) {
-                    // Router.replace(`/user/crud/${router.query.slug}`);
                     Router.replace(`/user`);
                 }
             }

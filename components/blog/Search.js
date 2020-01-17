@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import { Link } from '../../18n';
 import renderHTML from 'react-render-html';
 import { useState, useEffect } from 'react';
 import { listSearch } from '../../actions/blog';

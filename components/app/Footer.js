@@ -1,7 +1,7 @@
-import Link from 'next/link';
-import linkedinbox from '../../static/images/linkedin-box.png';
-import git from '../../static/images/github-box.png';
-import mail from '../../static/images/email (2).png';
+import { Link } from '../../18n';
+import linkedinbox from '../../public/static/images/linkedin-box.png';
+import git from '../../public/static/images/github-box.png';
+import mail from '../../public/static/images/email (2).png';
 
 
 

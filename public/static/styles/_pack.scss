@@ -1,0 +1,26 @@
+.pack {
+    &-title {
+        color: green;
+        font-weight: bold;
+    }
+    &-price {
+        color: red;
+        font-weight: bold;
+    }
+    &-btn {
+        width: 90%;
+        height: 70px;
+        font-size: 10px;
+    }
+}
+
+@media only screen and (max-height: 667px) {
+    .pack {
+        &-btn {
+            width: 90%;
+            height: 50px;
+            font-size: 10px !important;
+        }
+    }
+  }
+  

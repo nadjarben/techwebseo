@@ -1,6 +1,8 @@
 import { useEffect } from 'react';
-import Router from 'next/router';
 import { isAuth } from '../../actions/auth';
+import { Router } from '../../18n'
+
+
 
 const Private = ({ children }) => {
     useEffect(() => {

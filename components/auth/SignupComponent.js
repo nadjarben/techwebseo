@@ -1,13 +1,17 @@
 import { useState, useEffect } from 'react';
 import { signup, isAuth, preSignup } from '../../actions/auth';
-import Router from 'next/router';
-import Link from 'next/link';
+import { Router } from '../../18n';
 import LoginGoogle from './LoginGoogle';
+import Button from '@material-ui/core/Button'
+import Divider from '@material-ui/core/Divider';
+
 
 const SignupComponent = () => {
     const [values, setValues] = useState({
         name: '',
+        surname: '',
         email: '',
+        phone: '',
         password: '',
         error: '',
         loading: false,
@@ -15,7 +19,7 @@ const SignupComponent = () => {
         showForm: true
     });
 
-    const { name, email, password, error, loading, message, showForm } = values;
+    const { name, surname, email, phone, password, error, loading, message, showForm } = values;
 
     useEffect(() => {
         isAuth() && Router.push(`/`);
@@ -25,7 +29,7 @@ const SignupComponent = () => {
         e.preventDefault();
         // console.table({ name, email, password, error, loading, message, showForm });
         setValues({ ...values, loading: true, error: false });
-        const user = { name, email, password };
+        const user = { name, surname, phone, email, password };
 
         preSignup(user).then(data => {
             if (data.error) {
@@ -34,6 +38,8 @@ const SignupComponent = () => {
                 setValues({
                     ...values,
                     name: '',
+                    surname: '',
+                    phone: '',
                     email: '',
                     password: '',
                     error: '',
@@ -62,7 +68,17 @@ const SignupComponent = () => {
                         onChange={handleChange('name')}
                         type="text"
                         className="form-control"
-                        placeholder="Type your name"
+                        placeholder="Nom"
+                    />
+                </div>
+
+                <div className="form-group">
+                    <input
+                        value={surname}
+                        onChange={handleChange('surname')}
+                        type="prenom"
+                        className="form-control"
+                        placeholder="Prenom"
                     />
                 </div>
 
@@ -78,6 +94,16 @@ const SignupComponent = () => {
 
                 <div className="form-group">
                     <input
+                        value={phone}
+                        onChange={handleChange('phone')}
+                        type="phone"
+                        className="form-control"
+                        placeholder="Telephone"
+                    />
+                </div>
+
+                <div className="form-group">
+                    <input
                         value={password}
                         onChange={handleChange('password')}
                         type="password"
@@ -87,7 +113,9 @@ const SignupComponent = () => {
                 </div>
 
                 <div>
-                    <button className="btn btn-primary">Signup</button>
+                <Button type="submit" variant="contained" style={{backgroundColor:'red', color: 'white', height:'6vh', width: '99%'}}>
+                    S'inscrire
+                </Button>                
                 </div>
             </form>
         );
@@ -98,12 +126,13 @@ const SignupComponent = () => {
             {showError()}
             {showLoading()}
             {showMessage()}
-            <LoginGoogle />
             {showForm && signupForm()}
             <br />
-            <Link href="/auth/password/forgot">
-                <a className="btn btn-outline-danger btn-sm">Forgot password</a>
-            </Link>
+            <Divider />
+            <br/>
+            <div className="text-center">
+                <LoginGoogle />
+            </div>
         </React.Fragment>
     );
 };

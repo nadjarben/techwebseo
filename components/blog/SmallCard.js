@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import { Link } from '../../18n';
 import renderHTML from 'react-render-html';
 import moment from 'moment';
 import { API } from '../../config';

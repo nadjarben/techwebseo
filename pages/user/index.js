@@ -1,30 +1,23 @@
-import Layout from '../../components/Layout';
+import Layout from '../../components/layout/Layout';
 import Private from '../../components/auth/Private';
-import Link from 'next/link';
+import { Link, withTranslation } from '../../18n'
 
-const UserIndex = () => {
+const UserIndex = ({ t }) => {
     return (
         <Layout>
             <Private>
                 <div className="container-fluid" style={{marginBottom: '30vh'}}>
                     <div className="row">
                         <div className="col-md-12 pt-5 pb-5">
-                            <h2>User Dashboard</h2>
+                            <h2>Mon Compte</h2>
                         </div>
                         <div className="col-md-4">
                             <ul class="list-group">
-                                <li className="list-group-item">
-                                    <a href="/user/crud/blog">Create Blog</a>
-                                </li>
-
-                                <li className="list-group-item">
-                                    <Link href="/user/crud/blogs">
-                                        <a>Update/Delete Blog</a>
+                
+                                <li className="list-group-item list-user">
+                                    <Link href='/user/update'>
+                                        <a className="list-user">Modifier mes informations personnelles</a>
                                     </Link>
-                                </li>
-
-                                <li className="list-group-item">
-                                    <a href="/user/update">Update profile</a>
                                 </li>
                             </ul>
                         </div>
@@ -34,5 +27,7 @@ const UserIndex = () => {
         </Layout>
     );
 };
-
-export default UserIndex;
+UserIndex.getInitialProps = async () => ({
+    namespacesRequired: ['user'],
+})
+export default withTranslation('user')(UserIndex)

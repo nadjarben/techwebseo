@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
 import { signin, authenticate, isAuth } from '../../actions/auth';
-import Router from 'next/router';
-import Link from 'next/link';
+import{ Link, Router } from '../../18n';
 import LoginGoogle from './LoginGoogle';
+import Button from '@material-ui/core/Button'
+import Divider from '@material-ui/core/Divider';
+
 
 const SigninComponent = () => {
     const [values, setValues] = useState({
@@ -37,7 +39,7 @@ const SigninComponent = () => {
                     if (isAuth() && isAuth().role === 1) {
                         Router.push(`/admin`);
                     } else {
-                        Router.push(`/user`);
+                        Router.back();
                     }
                 });
             }
@@ -61,7 +63,7 @@ const SigninComponent = () => {
                         onChange={handleChange('email')}
                         type="email"
                         className="form-control"
-                        placeholder="Type your email"
+                        placeholder="Email"
                     />
                 </div>
 
@@ -71,12 +73,14 @@ const SigninComponent = () => {
                         onChange={handleChange('password')}
                         type="password"
                         className="form-control"
-                        placeholder="Type your password"
+                        placeholder="Mot de passe"
                     />
                 </div>
 
-                <div>
-                    <button className="btn btn-primary">Signin</button>
+                <div className="text-center">
+                    <Button type="submit" variant="contained" style={{backgroundColor:'red', color: 'white', height:'6vh', width: '99%'}}>
+                        Se connecter
+                    </Button>
                 </div>
             </form>
         );
@@ -87,14 +91,19 @@ const SigninComponent = () => {
             {showError()}
             {showLoading()}
             {showMessage()}
-            <LoginGoogle />
             {showForm && signinForm()}
-            <br />
+            <br/>
             <Link href="/auth/password/forgot">
-                <a className="btn btn-outline-danger btn-sm">Forgot password</a>
+                <a><p style={{fontSize:'14px'}} className="text-right">Mot de passe oublie</p></a>
             </Link>
+            <Divider  />
+            <br/>
+            <div className="text-center">
+                <LoginGoogle />
+            </div>
         </React.Fragment>
     );
 };
+
 
 export default SigninComponent;

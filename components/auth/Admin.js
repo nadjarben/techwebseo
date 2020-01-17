@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import Router from 'next/router';
+import { Router } from '../../18n';
 import { isAuth } from '../../actions/auth';
 
 const Admin = ({ children }) => {
